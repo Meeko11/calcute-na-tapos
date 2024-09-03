@@ -73,8 +73,11 @@ Public Class Form1
     End Sub
 
     Private Sub clear_Click(sender As Object, e As EventArgs) Handles clear.Click
-        TextBox1.Text = ""
+        ' TextBox1.Text = ""
+        If TextBox1.Text.Length > 0 Then
 
+        End If
+        TextBox1.Text = TextBox1.Text.Remove(TextBox1.Text.Length - 1)
 
     End Sub
 
@@ -151,5 +154,9 @@ Public Class Form1
         TextBox1.Text = "0"
         Operator_Selector = True
         Operations = 4 '% = *
+    End Sub
+
+    Private Sub clearall_Click(sender As Object, e As EventArgs) Handles clearall.Click
+        TextBox1.Text = ""
     End Sub
 End Class
